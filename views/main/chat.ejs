@@ -1,0 +1,20 @@
+<h2> Welcome <%= username %></h2>
+<div id="chat-content">
+	
+</div>
+<div id="newMessageForm">
+	<textarea id="message" placeholder="Enter your message here"></textarea>
+	<button id="postMessageButton">Add Message</button>
+</div>
+<div id="messagesContainer">
+</div>	
+
+<script>
+	$(document).on('click', '#postMessageButton', function(){
+		var message = $('#message').val();
+		$('#message').val('');
+		var new_message = "<div>"+message+"</div>";
+		console.log(new_message);
+		$('#chat-content').append(new_message);
+	});
+</script>
